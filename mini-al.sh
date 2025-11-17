@@ -4,6 +4,7 @@
 
 yum install docker -y
 systemctl start docker
+systemctl status docker
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo mv kubectl /usr/local/bin/kubectl
 sudo chmod +x /usr/local/bin/kubectl
@@ -13,4 +14,3 @@ sudo yum install iptables -y
 yum install conntrack -y
 minikube start --driver=docker --force
 minikube status 
-systemctl status docker
